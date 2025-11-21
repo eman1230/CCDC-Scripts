@@ -1,33 +1,16 @@
-sc.exe stop DiagTrack; sc.exe config DiagTrack start= disabled
-sc.exe stop DoSvc; sc.exe config DoSvc start= disabled
-sc.exe stop DPS; sc.exe config DPS start= disabled
-sc.exe stop SysMain; sc.exe config SysMain start= disabled
-sc.exe stop TabletInputService; sc.exe config TabletInputService start= disabled
-sc.exe stop WpnService; sc.exe config WpnService start= disabled
-sc.exe stop WpnUserService; sc.exe config WpnUserService start= disabled
-sc.exe stop TrkWks; sc.exe config TrkWks start= disabled
-sc.exe stop Themes; sc.exe config Themes start= disabled
-sc.exe stop TokenBroker; sc.exe config TokenBroker start= disabled
-sc.exe stop AppXSvc; sc.exe config AppXSvc start= disabled
-sc.exe stop DispBrokerDesktopSvc; sc.exe config DispBrokerDesktopSvc start= disabled
-sc.exe stop LicenseManager; sc.exe config LicenseManager start= disabled
-sc.exe stop MapsBroker; sc.exe config MapsBroker start= disabled
-sc.exe stop OneSyncSvc; sc.exe config OneSyncSvc start= disabled
-sc.exe stop MessagingService; sc.exe config MessagingService start= disabled
-sc.exe stop CDPSvc; sc.exe config CDPSvc start= disabled
-sc.exe stop CDPUserSvc; sc.exe config CDPUserSvc start= disabled
-sc.exe stop cbdhsvc; sc.exe config cbdhsvc start= disabled
-sc.exe stop StorSvc; sc.exe config StorSvc start= disabled
-sc.exe stop ShellHWDetection; sc.exe config ShellHWDetection start= disabled
-sc.exe stop PhoneSvc; sc.exe config PhoneSvc start= disabled
-sc.exe stop Fax; sc.exe config Fax start= disabled
-sc.exe stop RetailDemo; sc.exe config RetailDemo start= disabled
-sc.exe stop UevAgentService; sc.exe config UevAgentService start= disabled
-sc.exe stop SEMgrSvc; sc.exe config SEMgrSvc start= disabled
-sc.exe stop SCardSvr; sc.exe config SCardSvr start= disabled
-sc.exe stop XblAuthManager; sc.exe config XblAuthManager start= disabled
-sc.exe stop XblGameSave; sc.exe config XblGameSave start= disabled
-sc.exe stop XboxNetApiSvc; sc.exe config XboxNetApiSvc start= disabled
+Set-Service Winmgmt -StartupType Automatic
+Start-Service Winmgmt
+
+Set-Service RemoteRegistry -StartupType Automatic
+Start-Service RemoteRegistry
+
+Set-Service ServerManagerService -StartupType Automatic
+Start-Service ServerManagerService
+
+Set-Service RpcSs -StartupType Automatic
+
+Set-Service Wscsvc -StartupType Automatic
+Start-Service Wscsvc
 sc.exe stop SharedAccess; sc.exe config SharedAccess start= disabled
 sc.exe stop lfsvc; sc.exe config lfsvc start= disabled
 sc.exe stop WbioSrvc; sc.exe config WbioSrvc start= disabled
