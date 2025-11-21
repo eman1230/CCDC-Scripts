@@ -1,54 +1,35 @@
-# ============================================================
-# CORRECTED CCDC WINDOWS SERVICE HARDENING SCRIPT
-# ============================================================
-
-$DisableServices = @(
-    "DiagTrack",
-    "DoSvc",
-    "DPS",
-    "SysMain",
-    "TabletInputService",
-    "WpnService",
-    "WpnUserService",
-    "TrkWks",
-    "Themes",
-    "TokenBroker",
-    "AppXSvc",
-    "DispBrokerDesktopSvc",
-    "LicenseManager",
-    "MapsBroker",
-    "OneSyncSvc",
-    "MessagingService",
-    "CDPSvc",
-    "CDPUserSvc",
-    "cbdhsvc",
-    "StorSvc",
-    "ShellHWDetection",
-    "PhoneSvc",
-    "Fax",
-    "RetailDemo",
-    "UevAgentService",
-    "SEMgrSvc",
-    "SCardSvr",
-    "XblAuthManager",
-    "XblGameSave",
-    "XboxNetApiSvc",
-    "SharedAccess",
-    "lfsvc",
-    "WbioSrvc",
-    "bthserv",
-    "BluetoothUserService"
-)
-
-foreach ($svc in $DisableServices) {
-    Write-Host "Processing service: $svc"
-    
-    # Stop service safely
-    sc.exe stop $svc 2>$null
-    
-    # Disable service (correct syntax with required space)
-    sc.exe config $svc start= disabled 2>$null
-}
-
-Write-Host "Finished disabling unnecessary services."
-
+sc.exe stop DiagTrack; sc.exe config DiagTrack start= disabled
+sc.exe stop DoSvc; sc.exe config DoSvc start= disabled
+sc.exe stop DPS; sc.exe config DPS start= disabled
+sc.exe stop SysMain; sc.exe config SysMain start= disabled
+sc.exe stop TabletInputService; sc.exe config TabletInputService start= disabled
+sc.exe stop WpnService; sc.exe config WpnService start= disabled
+sc.exe stop WpnUserService; sc.exe config WpnUserService start= disabled
+sc.exe stop TrkWks; sc.exe config TrkWks start= disabled
+sc.exe stop Themes; sc.exe config Themes start= disabled
+sc.exe stop TokenBroker; sc.exe config TokenBroker start= disabled
+sc.exe stop AppXSvc; sc.exe config AppXSvc start= disabled
+sc.exe stop DispBrokerDesktopSvc; sc.exe config DispBrokerDesktopSvc start= disabled
+sc.exe stop LicenseManager; sc.exe config LicenseManager start= disabled
+sc.exe stop MapsBroker; sc.exe config MapsBroker start= disabled
+sc.exe stop OneSyncSvc; sc.exe config OneSyncSvc start= disabled
+sc.exe stop MessagingService; sc.exe config MessagingService start= disabled
+sc.exe stop CDPSvc; sc.exe config CDPSvc start= disabled
+sc.exe stop CDPUserSvc; sc.exe config CDPUserSvc start= disabled
+sc.exe stop cbdhsvc; sc.exe config cbdhsvc start= disabled
+sc.exe stop StorSvc; sc.exe config StorSvc start= disabled
+sc.exe stop ShellHWDetection; sc.exe config ShellHWDetection start= disabled
+sc.exe stop PhoneSvc; sc.exe config PhoneSvc start= disabled
+sc.exe stop Fax; sc.exe config Fax start= disabled
+sc.exe stop RetailDemo; sc.exe config RetailDemo start= disabled
+sc.exe stop UevAgentService; sc.exe config UevAgentService start= disabled
+sc.exe stop SEMgrSvc; sc.exe config SEMgrSvc start= disabled
+sc.exe stop SCardSvr; sc.exe config SCardSvr start= disabled
+sc.exe stop XblAuthManager; sc.exe config XblAuthManager start= disabled
+sc.exe stop XblGameSave; sc.exe config XblGameSave start= disabled
+sc.exe stop XboxNetApiSvc; sc.exe config XboxNetApiSvc start= disabled
+sc.exe stop SharedAccess; sc.exe config SharedAccess start= disabled
+sc.exe stop lfsvc; sc.exe config lfsvc start= disabled
+sc.exe stop WbioSrvc; sc.exe config WbioSrvc start= disabled
+sc.exe stop bthserv; sc.exe config bthserv start= disabled
+sc.exe stop BluetoothUserService; sc.exe config BluetoothUserService start= disabled
